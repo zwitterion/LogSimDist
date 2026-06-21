@@ -1,0 +1,47 @@
+{
+  "name": "Side Bind",
+  "description": "Log on the ground, supported at both ends, with lateral force from a middle support.",
+  "help_text": "In a Side Bind scenario, the log lies on the ground and is subjected to lateral forces (e.g. laying on a slope or pushed by another tree). The side being pushed experiences compression, and the opposite side experiences tension. Always cut from the compression side first, then complete the cut from the tension side.",
+  "log": {
+    "length": 10,
+    "diameter": 0.6,
+    "density": 500
+  },
+  "supports": [
+    {
+      "x": 0.5,
+      "y": 0,
+      "z": 0,
+      "type": "sawbuck",
+      "lock_up_down": true
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "z": -1,
+      "type": "stump",
+      "radius": 0.5,
+      "end_z": -0.65,
+      "time": 2000
+    },
+    {
+      "x": 9,
+      "y": 0,
+      "z": 0,
+      "type": "sawbuck",
+      "lock_up_down": true
+    }
+  ],
+  "chainsaw": {
+    "position": {
+      "x": 5.0,
+      "y": 1.8,
+      "z": 0.6
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  }
+}
