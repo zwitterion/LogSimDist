@@ -2,29 +2,49 @@
   "name": "Bottom Bind",
   "description": "Log cantilevers from a single support on the left. Tension on top; compression on bottom.",
   "help_text": "In a Bottom Bind scenario, the log is unsupported on one end (cantilevered). The weight of the overhanging section pulls it down, putting the top of the log in tension and the bottom in compression. Cutting from the top will open the kerf, while cutting from the bottom will close it and pinch the saw. Start with a shallow bottom cut, then cut from the top.",
-  "log": {
-    "length": 5,
-    "diameter": 0.5,
-    "density": 500
-  },
-  "supports": [
+  "logs": [
     {
-      "x": 0.6,
-      "y": 0,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": true
-    },
-    {
-      "x": 1.5,
-      "y": 0,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": true
+      "length": 5,
+      "diameter": 0.5,
+      "density": 500,
+      "position": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "supports": [
+        {
+          "x": 0.6,
+          "y": 0,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": true
+        },
+        {
+          "x": 1.5,
+          "y": 0,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": true
+        }
+      ]
     }
   ],
   "chainsaw": {
-    "position": { "x": 3.0, "y": 1.5, "z": 1.1 },
-    "rotation": { "x": 0, "y": 0, "z": 0 }
+    "position": {
+      "x": 3,
+      "y": 1.5,
+      "z": 1.1
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
   }
 }

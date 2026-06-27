@@ -2,45 +2,81 @@
   "name": "Top Bind",
   "description": "Log supported at both ends. Tension accumulates on the bottom; compression on the top.",
   "help_text": "In a Top Bind scenario, the log is supported on both ends. Gravity causes the middle to sag, putting the top of the log in compression (squeezing together) and the bottom in tension (pulling apart). Cutting from the top will cause the kerf to close and pinch the guide bar. Make a very small cut from the stop, the cut from the bottom.",
-  "log": {
-    "length": 12,
-    "diameter": 0.85,
-    "density": 500
-  },
-  "supports": [
+  "logs": [
     {
-      "x": 0.5,
-      "y": 0.2,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": false
+      "length": 12,
+      "diameter": 0.85,
+      "density": 500,
+      "position": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "supports": [
+        {
+          "x": 0.5,
+          "y": 0.2,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": false
+        },
+        {
+          "x": 1.5,
+          "y": 0.2,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": true
+        },
+        {
+          "x": 10.5,
+          "y": 0.2,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": false
+        },
+        {
+          "x": 11.5,
+          "y": 0.2,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": false
+        }
+      ]
     },
     {
-      "x": 1.5,
-      "y": 0.2,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": true
-    },
-    {
-      "x": 10.5,
-      "y": 0.2,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": false
-    },
-    {
-      "x": 11.5,
-      "y": 0.2,
-      "z": 0,
-      "type": "sawbuck",
-      "lock_up_down": false
+      "length": 8,
+      "diameter": 0.53,
+      "density": 500,
+      "position": [
+        0,
+        1.55,
+        0
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "supports": [
+        {
+          "x": 7,
+          "y": 0.5,
+          "z": 0,
+          "type": "sawbuck",
+          "lock_up_down": true
+        }
+      ]
     }
   ],
   "chainsaw": {
     "position": {
-      "x": 0.0,
-      "y": 0.2,
+      "x": 0,
+      "y": 2.0,
       "z": 1.1
     },
     "rotation": {

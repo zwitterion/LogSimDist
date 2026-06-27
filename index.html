@@ -10,12 +10,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENN9KBPGF5"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-ENN9KBPGF5');
   </script>
-  <script type="module" crossorigin src="/assets/index-CLjJ15I5.js"></script>
+  <script type="module" crossorigin src="/assets/index-BEASoB7a.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-C82ST3eB.css">
 </head>
 
@@ -77,26 +77,9 @@
         <div id="json-preview-container" class="json-preview"></div>
       </div>
 
-      <div class="section-title">Log Parameters</div>
-      <div class="param-group">
-        <div class="param-row">
-          <label>Length</label>
-          <div id="param-length" class="param-value-box">- m</div>
-        </div>
-        <div class="param-row">
-          <label>Diameter</label>
-          <div id="param-diameter" class="param-value-box">- m</div>
-        </div>
-        <div class="param-row">
-          <label>Density</label>
-          <div id="param-density" class="param-value-box">- kg/m³</div>
-        </div>
-      </div>
-
-      <div class="section-title">Support Constraints</div>
-      <div id="supports-list" class="param-group" style="max-height: 150px; overflow-y: auto; gap: 8px;">
-        <!-- Dynamic list of supports -->
-      </div>
+      <div class="section-title">Logs Specification</div>
+      <button id="logs-spec-btn" class="scenario-btn" style="width: 100%; margin-top: 8px;">View Logs
+        Specification</button>
 
       <div class="section-title">Tools</div>
       <div class="param-group" style="margin-top: 8px;">
@@ -216,6 +199,13 @@
           <span class="slider"></span>
         </label>
       </div>
+      <div class="flag-row">
+        <label for="flag-show-perf-warnings">Log Performance Warnings</label>
+        <label class="switch">
+          <input type="checkbox" id="flag-show-perf-warnings">
+          <span class="slider"></span>
+        </label>
+      </div>
 
       <div class="section-title">Environment Settings</div>
       <div class="slider-container">
@@ -223,7 +213,7 @@
           <span>Gravity Scale</span>
           <span id="gravity-val">9.8 m/s²</span>
         </div>
-        <input type="range" id="gravity-slider" min="0" max="9.8" step="0.1" value="9.8" class="range-slider">
+        <input type="range" id="gravity-slider" min="0" max="19.8" step="0.1" value="9.8" class="range-slider">
       </div>
 
       <div class="flag-row" style="margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 16px;">
@@ -256,6 +246,23 @@
           <div class="shortcut-item"><kbd>R</kbd> <span>Reset Chainsaw position</span></div>
           <div class="shortcut-item"><kbd>Space</kbd> <span>Hold: Mouse moves Saw</span></div>
           <div class="shortcut-item"><kbd>F</kbd> <span>Toggle Debug Panel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logs Specification Modal Overlay -->
+    <div id="logs-modal-overlay" style="display: none;">
+      <div class="help-modal glass-panel" style="max-height: 80vh; overflow-y: auto;">
+        <button id="close-logs-modal" class="close-modal-btn" title="Close Logs Modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <h2 id="modal-logs-title">Logs Specification</h2>
+        <div id="logs-list-container" style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+          <!-- Dynamic list of logs -->
         </div>
       </div>
     </div>

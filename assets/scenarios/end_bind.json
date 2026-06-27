@@ -2,37 +2,57 @@
   "name": "End Bind",
   "description": "Log supported at both ends on a slope. One support is twice as tall as the other.",
   "help_text": "In an End Bind scenario, the log lies at an angle. This introduces both bending and axial (sliding) forces. The steep slope increases the risk of the log sliding or kicking out once severed.",
-  "log": {
-    "length": 8,
-    "diameter": 0.6,
-    "density": 700
-  },
-  "supports": [
+  "logs": [
     {
-      "x": 1,
-      "y": 5,
-      "z": -1,
-      "type": "ramp",
-      "lock_up_down": true,
-      "collisions": true,
-      "end_x": 9,
-      "end_y": 1,
-      "end_z": 1
-    },
-    {
-      "x": 9,
-      "y": 1,
-      "z": -1,
-      "type": "ramp",
-      "lock_up_down": true,
-      "collisions": true,
-      "end_x": 12,
-      "end_y": 4,
-      "end_z": 1
+      "length": 8,
+      "diameter": 0.6,
+      "density": 700,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "supports": [
+        {
+          "x": 1,
+          "y": 5,
+          "z": -1,
+          "type": "ramp",
+          "lock_up_down": true,
+          "collisions": true,
+          "end_x": 9,
+          "end_y": 1,
+          "end_z": 1
+        },
+        {
+          "x": 9,
+          "y": 1,
+          "z": -1,
+          "type": "ramp",
+          "lock_up_down": true,
+          "collisions": true,
+          "end_x": 12,
+          "end_y": 4,
+          "end_z": 1
+        }
+      ]
     }
   ],
   "chainsaw": {
-    "position": { "x": 5.0, "y": 4.5, "z": 1.1 },
-    "rotation": { "x": 0, "y": 0, "z": 0 }
+    "position": {
+      "x": 5,
+      "y": 4.5,
+      "z": 1.1
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
   }
 }
