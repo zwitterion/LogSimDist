@@ -5,7 +5,7 @@
   "logs": [
     {
       "length": 12,
-      "diameter": 0.85,
+      "diameter": 0.50,
       "density": 500,
       "position": [
         0,
@@ -50,7 +50,7 @@
     },
     {
       "length": 8,
-      "diameter": 0.53,
+      "diameter": 0.45,
       "density": 500,
       "position": [
         0,
