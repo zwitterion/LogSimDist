@@ -8,8 +8,8 @@
       "diameter": 0.5,
       "density": 500,
       "position": [
-        -4,
-        1,
+        -5,
+        1.5,
         0
       ],
       "rotation": [
@@ -20,11 +20,11 @@
       "supports": [
         {
           "type": "mound",
-          "x": 0,
+          "x": 5,
           "y": -0.225,
           "z": 0,
-          "dx": 16.0,
-          "dz": 4.0,
+          "dx": 8.0,
+          "dz": 6.0,
           "stiffness": 0.8
         }
       ]
