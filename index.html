@@ -15,8 +15,8 @@
 
     gtag('config', 'G-ENN9KBPGF5');
   </script>
-  <script type="module" crossorigin src="/assets/index-D70ChwJQ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-4KIornkh.css">
+  <script type="module" crossorigin src="/assets/index-DsLwbUpB.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CjpCkDCo.css">
 </head>
 
 <body>
@@ -277,6 +277,26 @@
     <!-- Hash Route State Overlay -->
     <div id="route-overlay">
       <div id="route-indicator" class="route-indicator" style="display: none;"></div>
+    </div>
+
+    <!-- Stuck Modal Overlay -->
+    <div id="stuck-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(239, 68, 68, 0.2); backdrop-filter: blur(4px); z-index: 200; align-items: center; justify-content: center;">
+      <div class="glass-panel" style="padding: 30px; text-align: center; border-color: var(--status-red); max-width: 400px; position: relative;">
+        <button id="close-stuck-modal" class="close-modal-btn" title="Dismiss Stuck Warning">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <h2 style="color: var(--status-red); margin-top: 0;">Chainsaw Stuck!</h2>
+        <p style="color: var(--text-primary);">The chainsaw is stuck because of binding in the cut.</p>
+        <p style="color: var(--text-muted); font-size: 0.9em; margin-bottom: 8px;">Try inserting a <strong>wedge [1]</strong> to open the kerf back up.</p>
+        <p style="color: var(--text-muted); font-size: 0.9em; margin-top: 0; margin-bottom: 16px;">Alternatively, press <kbd>R</kbd> to reset the chainsaw.</p>
+        <button id="dismiss-stuck-btn" class="scenario-btn dismiss-stuck-btn" style="width: 100%; min-height: 40px; margin-top: 8px;">
+          Dismiss Warning
+        </button>
+      </div>
     </div>
 
     <!-- Generic Error Overlay -->
