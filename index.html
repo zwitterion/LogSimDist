@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - Premium Physics Simulator</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-BAKfbYWr.js"></script>
+  <script type="module" crossorigin src="/assets/index-BFpCyXeP.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-DSGkxDIa.css">
 </head>
 
@@ -93,6 +93,7 @@
         <label><input type="checkbox" id="dbg-resolveCollisions" checked> resolveCollisions</label>
         <label><input type="checkbox" id="dbg-enableEndcapFriction" checked> enableEndcapFriction</label>
         <label><input type="checkbox" id="dbg-debugFrictionForces"> debugFrictionForces</label>
+        <label><input type="checkbox" id="dbg-depthTest" checked> depthTest</label>
         <label><input type="checkbox" id="dbg-showPerfWarnings"> showPerfWarnings</label>
       </div>
 
@@ -111,10 +112,13 @@
     <div id="modal-help" class="modal-backdrop hidden">
       <div class="glass-panel modal-content">
         <h2>Controls & Help</h2>
-        <p>Use OrbitControls to look around.</p>
-        <p>Press <b>1</b> for Wedge, <b>2</b> for Hand.</p>
-        <p>Press <b>F</b> to toggle Debug Tools.</p>
-        <p>Press <b>H</b> to close.</p>
+        <p>Use mouse drag to Orbit/Pan.</p>
+        <p><b>Tools:</b> Press <b>1</b> for Wedge, <b>2</b> for Hand, <b>Escape</b> to deselect.</p>
+        <p><b>Chainsaw Move:</b> <b>W/S/A/D</b> Translate, <b>Q/E</b> Yaw, <b>Z/C</b> Pitch.</p>
+        <p><b>Chainsaw Actions:</b> <b>T</b> Toggle Throttle, <b>R</b> Reset Position.</p>
+        <p><b>Chainsaw Snapping:</b> <b>Arrow Keys</b> to snap/flip position.</p>
+        <p><b>Gizmo:</b> <b>M</b> to toggle Translate/Rotate mode.</p>
+        <p><b>System:</b> Press <b>F</b> for Debug Tools, <b>H</b> to toggle Help.</p>
       </div>
     </div>
 
