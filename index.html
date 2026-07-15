@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - Premium Physics Simulator</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DJCTJrlX.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-DSGkxDIa.css">
+  <script type="module" crossorigin src="/assets/index-BveOLleR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CW49V5_G.css">
 </head>
 
 <body>
@@ -29,7 +29,13 @@
     <div class="glass-panel top-left-hud">
       <h2 id="scenario-name">Scenario: Top Bind</h2>
       <div class="hud-stat">
-        <label>Throttle</label>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label>Throttle</label>
+          <label class="toggle-switch">
+            <input type="checkbox" id="throttle-toggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
         <div class="progress-bar">
           <div id="throttle-fill" class="fill" style="width: 0%;"></div>
         </div>
