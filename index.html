@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - Premium Physics Simulator</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-C5NX6xPH.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CW49V5_G.css">
+  <script type="module" crossorigin src="/assets/index-CfH_QaQG.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-KU0iM2Ir.css">
 </head>
 
 <body>
@@ -81,6 +81,12 @@
           <input type="checkbox" id="dbg-showTension">
           <span>Show Tension/Compression</span>
         </label>
+        <div id="tension-mode-container" class="segmented-control" style="display: none;">
+          <input type="radio" name="globalTensionGroup" id="tension-log" value="log" checked>
+          <label for="tension-log">Log</label>
+          <input type="radio" name="globalTensionGroup" id="tension-global" value="global">
+          <label for="tension-global">Global</label>
+        </div>
       </div>
     </aside>
 
