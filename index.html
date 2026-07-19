@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - Premium Physics Simulator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-CfH_QaQG.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-KU0iM2Ir.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CT8Q28gY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C91hcrpi.css">
 </head>
 
 <body>
@@ -25,70 +25,149 @@
 
   <!-- Main HUD Overlay -->
   <div id="hud-overlay" class="ui-layer">
-    <!-- Top Left: Telemetry -->
-    <div class="glass-panel top-left-hud">
-      <h2 id="scenario-name">Scenario: Top Bind</h2>
-      <div class="hud-stat">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <label>Throttle</label>
-          <label class="toggle-switch">
-            <input type="checkbox" id="throttle-toggle">
-            <span class="toggle-slider"></span>
-          </label>
+
+    <!-- Backdrop for non-simulator modes -->
+    <div id="mode-backdrop" class="modal-backdrop" style="z-index: 40;"></div>
+
+
+    <!-- PPE Mode Panel -->
+    <div id="ppe-panel" class="mode-panel">
+      <div class="glass-panel">
+        <h2>Personal Protective Equipment (PPE)</h2>
+        <div class="mode-content">
+          <div id="ppe-list" class="ppe-list"></div>
         </div>
-        <div class="progress-bar">
-          <div id="throttle-fill" class="fill" style="width: 0%;"></div>
-        </div>
+        <button id="btn-next-ohlec" class="glass-btn" style="margin-top: 1.5rem; width: 100%;">Proceed to OHLEC</button>
       </div>
-      <div class="hud-stat">
-        <label>Kerf Width</label>
-        <div class="progress-bar">
-          <div id="kerf-fill" class="fill" style="width: 0%;"></div>
+    </div>
+
+    <!-- PPE Detail & Monetization Panel -->
+    <div id="ppe-detail-panel" class="mode-panel hidden">
+      <div class="glass-panel">
+        <div class="ppe-preview-container">
+          <canvas id="ppe-preview-canvas"></canvas>
+        </div>
+        <h2 id="ppe-detail-title" style="margin-bottom: 1rem;">Hard Hat / Helmet</h2>
+        <div class="mode-content">
+          <div class="ppe-desc-section">
+            <h4 style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">Description</h4>
+            <p id="ppe-detail-desc" style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-primary); text-align: left;"></p>
+            
+            <h4 style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">Safety Functions</h4>
+            <p id="ppe-detail-funcs" style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted); text-align: left;"></p>
+          </div>
+          <div class="ppe-price-buy-row" style="margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+            <div style="text-align: left;">
+              <label style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block;">Price Range</label>
+              <div id="ppe-detail-price" style="font-weight: 600; font-size: 1.15rem; color: var(--status-green);"></div>
+            </div>
+            <a id="ppe-detail-buy" href="#" target="_blank" class="glass-btn active">Where to Buy</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Top Right: Help -->
-    <button id="btn-help" class="glass-btn top-right-btn">? (H)</button>
-
-    <!-- Right Sidebar: Controls -->
-    <aside class="glass-panel sidebar">
-      <h3>Tool Selection</h3>
-      <div class="tool-group">
-        <button class="glass-btn active" data-tool="chainsaw">Chainsaw (Def)</button>
-        <button class="glass-btn" data-tool="wedge">Wedge (1)</button>
-        <button class="glass-btn" data-tool="hand">Hand (2)</button>
-      </div>
-
-      <h3>Scenarios</h3>
-      <div class="scenario-group">
-        <button class="glass-btn" data-scenario="top_bind.json">Top Bind</button>
-        <button class="glass-btn" data-scenario="bottom_bind.json">Bottom Bind</button>
-        <button class="glass-btn" data-scenario="side_bind.json">Side Bind</button>
-        <button class="glass-btn" data-scenario="end_bind.json">End Bind</button>
-      </div>
-
-      <div class="custom-upload">
-        <label for="custom-json" class="glass-btn">Upload Custom Schema</label>
-        <input type="file" id="custom-json" accept=".json" hidden />
-      </div>
-
-      <button id="btn-log-spec" class="glass-btn outline">View Log Specs</button>
-
-      <div
-        style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
-        <label style="display:flex; align-items:center; gap:0.5rem; font-size: 0.9rem; cursor: pointer;">
-          <input type="checkbox" id="dbg-showTension">
-          <span>Show Tension/Compression</span>
-        </label>
-        <div id="tension-mode-container" class="segmented-control" style="display: none;">
-          <input type="radio" name="globalTensionGroup" id="tension-log" value="log" checked>
-          <label for="tension-log">Log</label>
-          <input type="radio" name="globalTensionGroup" id="tension-global" value="global">
-          <label for="tension-global">Global</label>
+    <!-- OHLEC Mode Panel -->
+    <div id="ohlec-panel" class="mode-panel hidden">
+      <div class="glass-panel">
+        <h2>The OHLEC Process</h2>
+        <div class="mode-content">
+          <ol>
+            <li><b>Objective:</b> What is the goal of the cut? (e.g., bucking, directional felling).</li>
+            <li><b>Hazards:</b> Identifying dangers (overhead, ground, bystanders).</li>
+            <li><b>Leans & Binds:</b> Analyzing tension and compression in the wood.</li>
+            <li><b>Escape Plan:</b> Planning a safe retreat path before starting the saw.</li>
+            <li><b>Cut Plan:</b> Deciding the exact sequence of cuts based on the binds.</li>
+          </ol>
+        </div>
+        <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+          <button id="btn-back-ppe" class="glass-btn outline" style="flex: 1;">Back to PPE</button>
+          <button id="btn-start-simulator" class="glass-btn active" style="flex: 1;">Start Simulator</button>
         </div>
       </div>
-    </aside>
+    </div>
+
+    <!-- Top Left Area (Modes + Telemetry) -->
+    <div class="top-left-container">
+      
+      <!-- Mode Navigation -->
+      <div class="glass-panel" style="padding: 0.5rem; width: 100%;">
+        <div id="mode-nav" class="segmented-control" style="margin-top: 0;">
+          <input type="radio" name="modeGroup" id="mode-ppe" value="PPE" checked>
+          <label for="mode-ppe" style="padding: 4px 2px;">PPE</label>
+          <input type="radio" name="modeGroup" id="mode-ohlec" value="OHLEC">
+          <label for="mode-ohlec" style="padding: 4px 2px;">OHLEC</label>
+          <input type="radio" name="modeGroup" id="mode-simulator" value="SIMULATOR">
+          <label for="mode-simulator" style="padding: 4px 2px;">SIMULATOR</label>
+        </div>
+      </div>
+
+      <!-- Top Left: Telemetry -->
+      <div class="glass-panel top-left-hud simulator-control hidden">
+        <h2 id="scenario-name">Scenario: Top Bind</h2>
+        <div class="hud-stat">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <label>Throttle</label>
+            <label class="toggle-switch">
+              <input type="checkbox" id="throttle-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="progress-bar">
+            <div id="throttle-fill" class="fill" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="hud-stat">
+          <label>Kerf Width</label>
+          <div class="progress-bar">
+            <div id="kerf-fill" class="fill" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left Sidebar: Controls -->
+      <aside class="glass-panel sidebar simulator-control hidden" style="width: 100%;">
+        <h3>Tool Selection</h3>
+        <div class="tool-group">
+          <button class="glass-btn active" data-tool="chainsaw">Chainsaw (Def)</button>
+          <button class="glass-btn" data-tool="wedge">Wedge (1)</button>
+          <button class="glass-btn" data-tool="hand">Hand (2)</button>
+        </div>
+
+        <h3>Scenarios</h3>
+        <div class="scenario-group">
+          <button class="glass-btn" data-scenario="top_bind.json">Top Bind</button>
+          <button class="glass-btn" data-scenario="bottom_bind.json">Bottom Bind</button>
+          <button class="glass-btn" data-scenario="side_bind.json">Side Bind</button>
+          <button class="glass-btn" data-scenario="end_bind.json">End Bind</button>
+        </div>
+
+        <div class="custom-upload">
+          <label for="custom-json" class="glass-btn">Upload Custom Schema</label>
+          <input type="file" id="custom-json" accept=".json" hidden />
+        </div>
+
+        <button id="btn-log-spec" class="glass-btn outline">View Log Specs</button>
+
+        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+          <label style="display:flex; align-items:center; gap:0.5rem; font-size: 0.9rem; cursor: pointer;">
+            <input type="checkbox" id="dbg-showTension">
+            <span>Show Tension/Compression</span>
+          </label>
+          <div id="tension-mode-container" class="segmented-control" style="display: none;">
+            <input type="radio" name="globalTensionGroup" id="tension-log" value="log" checked>
+            <label for="tension-log">Log</label>
+            <input type="radio" name="globalTensionGroup" id="tension-global" value="global">
+            <label for="tension-global">Global</label>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Top Right: Help -->
+    <button id="btn-help" class="glass-btn top-right-btn simulator-control hidden">? (H)</button>
+
+
 
     <!-- Debug Panel (Hidden by default, Toggled by F) -->
     <div id="debug-panel" class="glass-panel debug-panel hidden">
@@ -143,7 +222,7 @@
     </div>
   </div>
 
-  <!-- Application Entry Point -->
+  <!-- Application Entry Point -->
 </body>
 
 </html>
