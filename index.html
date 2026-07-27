@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - Premium Physics Simulator</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-sYIVw0hh.js"></script>
+  <script type="module" crossorigin src="/assets/index-Duycysrx.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-C91hcrpi.css">
 </head>
 
@@ -61,7 +61,10 @@
               <label style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block;">Price Range</label>
               <div id="ppe-detail-price" style="font-weight: 600; font-size: 1.15rem; color: var(--status-green);"></div>
             </div>
-            <a id="ppe-detail-buy" href="#" target="_blank" class="glass-btn active">Where to Buy</a>
+            <div style="display: flex; gap: 0.5rem;">
+              <button id="ppe-detail-buy" class="glass-btn active">Where to Buy</button>
+              <button id="btn-purchasing-prefs" class="glass-btn" style="padding: 0 0.75rem;" title="Purchasing Preferences">⚙️</button>
+            </div>
           </div>
         </div>
       </div>
@@ -218,6 +221,33 @@
         <h2>WARNING: CHAINSAW PINCHED</h2>
         <p>The chainsaw guidebar is pinched! Press <b>R</b> to reset.</p>
         <button id="btn-dismiss-stuck" class="glass-btn">Dismiss</button>
+      </div>
+    </div>
+
+    <div id="modal-purchasing-prefs" class="modal-backdrop hidden">
+      <div class="glass-panel modal-content" style="max-width: 400px; text-align: left;">
+        <h2>Purchasing Preferences</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Select your preferred stores for the "Where to Buy" feature.</p>
+        
+        <div id="default-stores-list" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
+          <!-- Default stores injected here -->
+        </div>
+
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-bottom: 1rem;">
+          <h4 style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem; text-transform: uppercase;">Custom Stores</h4>
+          <div id="custom-stores-list" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
+            <!-- Custom stores injected here -->
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" id="input-custom-store" placeholder="e.g. acmetools.com" class="glass-btn" style="flex: 1; text-align: left; cursor: text; border-radius: 4px;">
+            <button id="btn-add-custom-store" class="glass-btn">Add</button>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.5rem;">
+          <button id="btn-cancel-prefs" class="glass-btn outline">Cancel</button>
+          <button id="btn-save-prefs" class="glass-btn active">Save</button>
+        </div>
       </div>
     </div>
   </div>
