@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogSim3D - OHLEC Assessment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/ohlec-Ow7FIIqQ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/wipModal-DJRdX76U.js">
+  <link rel="stylesheet" crossorigin href="/assets/wipModal-C91hcrpi.css">
+</head>
+
+<body>
+  <!-- 3D Canvas Mount Point -->
+  <canvas id="app-canvas"></canvas>
+
+  <!-- Loading Screen (Visible on boot) -->
+  <div id="loading-screen" class="active">
+    <div class="loader-content">
+      <h1>OHLEC Assessment</h1>
+      <div class="spinner"></div>
+      <p id="loading-text">Loading Scenario...</p>
+    </div>
+  </div>
+
+  <!-- Main HUD Overlay -->
+  <div id="hud-overlay" class="ui-layer">
+
+    <!-- Top Left Area: OHLEC Step Wizard -->
+    <div class="top-left-container" style="width: 300px;">
+      <div class="glass-panel" style="padding: 1rem;">
+        <h2 style="margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">OHLEC Steps</h2>
+        <div id="ohlec-wizard" style="display: flex; flex-direction: column; gap: 0.5rem;">
+          <div class="step-item" style="padding: 0.5rem; background: rgba(0,255,255,0.1); border-left: 3px solid var(--accent-cyan);" id="step-0">1. Objective</div>
+          <div class="step-item" style="padding: 0.5rem; opacity: 0.5;" id="step-1">2. Hazards</div>
+          <div class="step-item" style="padding: 0.5rem; opacity: 0.5;" id="step-2">3. Leans & Binds</div>
+          <div class="step-item" style="padding: 0.5rem; opacity: 0.5;" id="step-3">4. Escape Route</div>
+          <div class="step-item" style="padding: 0.5rem; opacity: 0.5;" id="step-4">5. Cut Plan</div>
+        </div>
+      </div>
+      
+      <a href="/" class="glass-btn outline" style="margin-top: 1rem; display: block; text-align: center; text-decoration: none;">Exit Assessment</a>
+    </div>
+
+    <!-- Bottom Center: Contextual Action Panel -->
+    <div id="ohlec-action-panel" class="glass-panel" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); text-align: center; min-width: 400px;">
+      <h3 id="ohlec-action-title" style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Step 1: Define Objective</h3>
+      <p id="ohlec-action-desc" style="font-size: 1.1rem; color: white;">Identify the safest drop zone for the log segment.</p>
+    </div>
+
+  </div>
+
+  <!-- Application Entry Point -->
+</body>
+
+</html>

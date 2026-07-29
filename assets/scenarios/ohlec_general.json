@@ -1,0 +1,42 @@
+{
+  "name": "OHLEC General",
+  "description": "Log supported at both ends. Tension accumulates on the bottom; compression on the top.",
+  "help_text": "In a Top Bind scenario, the log is supported on both ends. Gravity causes the middle to sag, putting the top of the log in compression (squeezing together) and the bottom in tension (pulling apart). Cutting from the top will cause the kerf to close and pinch the guide bar. Make a very small cut from the stop, the cut from the bottom.",
+  "logs": [
+    {
+      "length": 10,
+      "diameter": 0.60,
+      "density": 500,
+      "position": [
+        -3,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "supports": [
+        {
+          "type": "mound",
+          "x": 0,
+          "y": 0.5,
+          "z": 0,
+          "dx": 5.0,
+          "dz": 10.0,
+          "stiffness": 0.4
+        },
+        {
+          "type": "mound",
+          "x": 9,
+          "y": 0.5,
+          "z": 0,
+          "dx": 5.0,
+          "dz": 10.0,
+          "stiffness": 0.4
+        }
+      ]
+    }
+  ]
+}
