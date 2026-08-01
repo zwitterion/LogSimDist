@@ -40,14 +40,24 @@
     }
   ],
   "ohlec": {
-    "objective": {
-      "target_zone": {
-        "x": 5,
-        "z": 5,
-        "radius": 2.5
+    "objective": [
+      {
+        "target_zone": {
+          "x": 2,
+          "z": 0,
+          "radius": 2.5
+        },
+        "description": "Identify the safest drop zone for the log segment."
       },
-      "description": "Identify the safest drop zone for the log segment."
-    },
+      {
+        "target_zone": {
+          "x": 3,
+          "z": -3,
+          "radius": 2.5
+        },
+        "description": "Identify the area where log segemnts will be moved after the cut."
+      }
+    ],
     "hazards": [
       {
         "id": "h1",
