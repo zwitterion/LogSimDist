@@ -69,6 +69,23 @@
         ],
         "model": "pine_tree",
         "radius": 1.0,
+        "critical": false
+      },
+      {
+        "id": "branch",
+        "type": "widowmaker",
+        "position": [
+          -0.5,
+          5,
+          3
+        ],
+        "rotation": [
+          0,
+          180,
+          0
+        ],
+        "model": "tree_branch",
+        "radius": 1.0,
         "critical": true
       }
     ],
