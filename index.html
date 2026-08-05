@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LogSim3D - Premium Physics Simulator</title>
+  <title>Chainsaw Simulator and OHLEC Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-CwZfIRqP.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/wipModal-BIeNMeBn.js">
+  <script type="module" crossorigin src="/assets/main-BBkcAwB-.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/wipModal-RCt_XOeb.js">
   <link rel="stylesheet" crossorigin href="/assets/wipModal-C91hcrpi.css">
 </head>
 
@@ -51,20 +51,31 @@
         <h2 id="ppe-detail-title" style="margin-bottom: 1rem;">Hard Hat / Helmet</h2>
         <div class="mode-content">
           <div class="ppe-desc-section">
-            <h4 style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">Description</h4>
-            <p id="ppe-detail-desc" style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-primary); text-align: left;"></p>
-            
-            <h4 style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">Safety Functions</h4>
-            <p id="ppe-detail-funcs" style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted); text-align: left;"></p>
+            <h4
+              style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">
+              Description</h4>
+            <p id="ppe-detail-desc"
+              style="font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-primary); text-align: left;"></p>
+
+            <h4
+              style="color: var(--accent-cyan); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; text-align: left;">
+              Safety Functions</h4>
+            <p id="ppe-detail-funcs"
+              style="font-size: 0.9rem; margin-bottom: 1rem; color: var(--text-muted); text-align: left;"></p>
           </div>
-          <div class="ppe-price-buy-row" style="margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
+          <div class="ppe-price-buy-row"
+            style="margin-top: 1rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem;">
             <div style="text-align: left;">
-              <label style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block;">Price Range</label>
-              <div id="ppe-detail-price" style="font-weight: 600; font-size: 1.15rem; color: var(--status-green);"></div>
+              <label
+                style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; display: block;">Price
+                Range</label>
+              <div id="ppe-detail-price" style="font-weight: 600; font-size: 1.15rem; color: var(--status-green);">
+              </div>
             </div>
             <div style="display: flex; gap: 0.5rem;">
               <button id="ppe-detail-buy" class="glass-btn active">Where to Buy</button>
-              <button id="btn-purchasing-prefs" class="glass-btn" style="padding: 0 0.75rem;" title="Purchasing Preferences">⚙️</button>
+              <button id="btn-purchasing-prefs" class="glass-btn" style="padding: 0 0.75rem;"
+                title="Purchasing Preferences">⚙️</button>
             </div>
           </div>
         </div>
@@ -86,14 +97,16 @@
         </div>
         <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
           <button id="btn-back-ppe" class="glass-btn outline" style="flex: 1;">Back to PPE</button>
-          <a href="/ohlec.html" class="glass-btn active" style="flex: 1; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center;">Start Assessment</a>
+          <a href="/ohlec.html" class="glass-btn active"
+            style="flex: 1; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center;">Start
+            Assessment</a>
         </div>
       </div>
     </div>
 
     <!-- Top Left Area (Modes + Telemetry) -->
     <div class="top-left-container">
-      
+
       <!-- Mode Navigation -->
       <div class="glass-panel" style="padding: 0.5rem; width: 100%;">
         <div id="mode-nav" class="segmented-control" style="margin-top: 0;">
@@ -153,7 +166,8 @@
 
         <button id="btn-log-spec" class="glass-btn outline">View Log Specs</button>
 
-        <div style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+        <div
+          style="margin-top: 1rem; padding: 0.75rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
           <label style="display:flex; align-items:center; gap:0.5rem; font-size: 0.9rem; cursor: pointer;">
             <input type="checkbox" id="dbg-showTension">
             <span>Show Tension/Compression</span>
@@ -199,7 +213,8 @@
         <label>Binding Sensitivity
           <input type="range" id="dbg-binding" min="0" max="1000" step="1" value="250">
         </label>
-        <div id="dbg-pressure-display" style="font-size: 0.9em; margin-top: 5px; color: var(--text-muted, #ccc);">Current Pressure: 0.00</div>
+        <div id="dbg-pressure-display" style="font-size: 0.9em; margin-top: 5px; color: var(--text-muted, #ccc);">
+          Current Pressure: 0.00</div>
       </div>
     </div>
 
@@ -228,19 +243,23 @@
     <div id="modal-purchasing-prefs" class="modal-backdrop hidden">
       <div class="glass-panel modal-content" style="max-width: 400px; text-align: left;">
         <h2>Purchasing Preferences</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Select your preferred stores for the "Where to Buy" feature.</p>
-        
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Select your preferred stores for
+          the "Where to Buy" feature.</p>
+
         <div id="default-stores-list" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem;">
           <!-- Default stores injected here -->
         </div>
 
         <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-bottom: 1rem;">
-          <h4 style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem; text-transform: uppercase;">Custom Stores</h4>
-          <div id="custom-stores-list" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <h4 style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 0.5rem; text-transform: uppercase;">
+            Custom Stores</h4>
+          <div id="custom-stores-list"
+            style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
             <!-- Custom stores injected here -->
           </div>
           <div style="display: flex; gap: 0.5rem;">
-            <input type="text" id="input-custom-store" placeholder="e.g. acmetools.com" class="glass-btn" style="flex: 1; text-align: left; cursor: text; border-radius: 4px;">
+            <input type="text" id="input-custom-store" placeholder="e.g. acmetools.com" class="glass-btn"
+              style="flex: 1; text-align: left; cursor: text; border-radius: 4px;">
             <button id="btn-add-custom-store" class="glass-btn">Add</button>
           </div>
         </div>

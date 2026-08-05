@@ -1,0 +1,2 @@
+import{U as a,A as s,b as t,a as n,s as i}from"./wipModal-RCt_XOeb.js";async function l(){console.log("Bootstrapping OHLEC Assessment Mode..."),a.update({activeMode:"OHLEC",activeTool:null}),await s.loadAll(),t();const e=document.getElementById("loading-screen");e&&(e.classList.remove("active"),setTimeout(()=>{e.style.display="none"},500)),console.log("Initializing 3D Engine for OHLEC...");const o=new n("app-canvas");o.init(),o.run(),o.startOhlecMode(),i()}l().catch(console.error);
+//# sourceMappingURL=ohlec-D5L1LIfX.js.map
