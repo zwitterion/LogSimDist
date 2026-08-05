@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LogSim3D - OHLEC Assessment</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/ohlec-CTDE_s1C.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/wipModal-BrezWmkB.js">
+  <script type="module" crossorigin src="/assets/ohlec-Bex-IANO.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/wipModal-CDQ9uZ32.js">
   <link rel="stylesheet" crossorigin href="/assets/wipModal-C91hcrpi.css">
 </head>
 
@@ -39,8 +39,21 @@
           <div class="step-item" style="padding: 0.5rem; opacity: 0.5;" id="step-4">5. Cut Plan</div>
         </div>
       </div>
-      
-      <a href="/" class="glass-btn outline" style="margin-top: 1rem; display: block; text-align: center; text-decoration: none;">Exit Assessment</a>
+
+      <div class="glass-panel" style="padding: 0.75rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; font-size: 0.9rem; cursor: pointer;">
+          <input type="checkbox" id="dbg-showTension">
+          <span>Show Tension/Compression</span>
+        </label>
+        <div id="tension-mode-container" class="segmented-control" style="display: none;">
+          <input type="radio" name="globalTensionGroup" id="tension-log" value="log" checked>
+          <label for="tension-log">Log</label>
+          <input type="radio" name="globalTensionGroup" id="tension-global" value="global">
+          <label for="tension-global">Global</label>
+        </div>
+      </div>
+
+      <a href="/" class="glass-btn outline" style="display: block; text-align: center; text-decoration: none;">Exit Assessment</a>
     </div>
 
     <!-- Bottom Center: Contextual Action Panel -->

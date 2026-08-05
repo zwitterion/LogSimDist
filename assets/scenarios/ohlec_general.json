@@ -37,6 +37,41 @@
           "stiffness": 0.4
         }
       ]
+    },
+    {
+      "length": 10,
+      "diameter": 0.60,
+      "density": 500,
+      "position": [
+        3,
+        1,
+        2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "supports": [
+        {
+          "type": "mound",
+          "x": 0,
+          "y": 0.5,
+          "z": 0,
+          "dx": 5.0,
+          "dz": 5.0,
+          "stiffness": 0.4
+        },
+        {
+          "type": "mound",
+          "x": 6,
+          "y": 0.5,
+          "z": 0,
+          "dx": 5.0,
+          "dz": 10.0,
+          "stiffness": 0.4
+        }
+      ]
     }
   ],
   "ohlec": {
@@ -48,14 +83,6 @@
           "radius": 2.5
         },
         "description": "Identify the safest drop zone for the log segment."
-      },
-      {
-        "target_zone": {
-          "x": 3,
-          "z": -3,
-          "radius": 2.5
-        },
-        "description": "Identify the area where log segemnts will be moved after the cut."
       }
     ],
     "hazards": [
