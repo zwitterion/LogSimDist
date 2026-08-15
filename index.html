@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chainsaw Simulator and OHLEC Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-QTeWqAKZ.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/wipModal-CDQ9uZ32.js">
-  <link rel="stylesheet" crossorigin href="/assets/wipModal-C91hcrpi.css">
+  <script type="module" crossorigin src="/assets/main-B4pA7YVY.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/wipModal-DiPR3GW5.js">
+  <link rel="stylesheet" crossorigin href="/assets/wipModal-Dc_tsSn3.css">
 </head>
 
 <body>
@@ -104,6 +104,51 @@
       </div>
     </div>
 
+    <!-- Assessment Mode Panel -->
+    <div id="assessment-panel" class="mode-panel hidden" style="width: 580px;">
+      <div class="glass-panel" style="padding: 1.75rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.75rem;">
+          <div>
+            <h2 style="font-size: 1.4rem; color: var(--accent-cyan); margin: 0;">Safety & Operations Exam</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">Test your understanding of chainsaw operation and safety rules.</p>
+          </div>
+          <span style="background: rgba(6, 182, 212, 0.2); color: var(--accent-cyan); padding: 4px 10px; border-radius: 12px; font-weight: 600; font-size: 0.8rem;">Q 1/1</span>
+        </div>
+
+        <div class="mode-content" style="text-align: left;">
+          <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 1.25rem; font-weight: 600;">
+            1. What is the primary purpose of wearing cut-resistant chainsaw chaps?
+          </h3>
+
+          <div id="exam-options" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <label class="exam-option-card">
+              <input type="radio" name="examQuestion1" value="A">
+              <span class="option-text">A) To keep legs warm when operating in sub-zero winter environments.</span>
+            </label>
+            <label class="exam-option-card">
+              <input type="radio" name="examQuestion1" value="B">
+              <span class="option-text">B) To provide high-friction fibers that tangle and stop the chain upon contact.</span>
+            </label>
+            <label class="exam-option-card">
+              <input type="radio" name="examQuestion1" value="C">
+              <span class="option-text">C) To shield pants from sawdust, oil, and resin buildup during long shifts.</span>
+            </label>
+            <label class="exam-option-card">
+              <input type="radio" name="examQuestion1" value="D">
+              <span class="option-text">D) To absorb vibration feedback from heavy high-displacement saw engines.</span>
+            </label>
+          </div>
+
+          <div id="exam-feedback" class="exam-feedback-box hidden" style="margin-bottom: 1.25rem; padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.9rem;"></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+          <button id="btn-reset-exam" class="glass-btn outline" style="padding: 0.6rem 1.2rem;">Reset</button>
+          <button id="btn-submit-exam" class="glass-btn active" style="padding: 0.6rem 1.5rem;">Submit Answer</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Top Left Area (Modes + Telemetry) -->
     <div class="top-left-container">
 
@@ -111,11 +156,13 @@
       <div class="glass-panel" style="padding: 0.5rem; width: 100%;">
         <div id="mode-nav" class="segmented-control" style="margin-top: 0;">
           <input type="radio" name="modeGroup" id="mode-ppe" value="PPE" checked>
-          <label for="mode-ppe" style="padding: 4px 2px;">PPE</label>
+          <label for="mode-ppe">PPE</label>
           <input type="radio" name="modeGroup" id="mode-ohlec" value="OHLEC">
-          <label for="mode-ohlec" style="padding: 4px 2px;">OHLEC</label>
+          <label for="mode-ohlec">OHLEC</label>
           <input type="radio" name="modeGroup" id="mode-simulator" value="SIMULATOR">
-          <label for="mode-simulator" style="padding: 4px 2px;">SIMULATOR</label>
+          <label for="mode-simulator">SIMULATOR</label>
+          <input type="radio" name="modeGroup" id="mode-assessment" value="ASSESSMENT">
+          <label for="mode-assessment">ASSESSMENT</label>
         </div>
       </div>
 
