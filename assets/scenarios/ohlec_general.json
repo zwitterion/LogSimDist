@@ -116,6 +116,16 @@
         "critical": true
       }
     ],
+    "leans": [
+      {
+        "log_index": 0,
+        "bind_type": "top_bind"
+      },
+      {
+        "log_index": 1,
+        "bind_type": "bottom_bind"
+      }
+    ],
     "escape_route": {
       "safe_angles": [
         135,
