@@ -3960,4 +3960,4 @@ manScale: [${i.x.toFixed(3)}, ${i.y.toFixed(3)}, ${i.z.toFixed(3)}]
       </div>
     </div>
   `);const e=document.getElementById("btn-dismiss-wip"),t=document.getElementById("modal-wip");e&&t&&e.addEventListener("click",()=>{t.remove()})}export{pn as A,bs as P,Be as U,Dx as a,Lx as b,Px as i,Ux as s};
-//# sourceMappingURL=wipModal-Bw5s_BxK.js.map
+//# sourceMappingURL=wipModal-sgqFGicd.js.map
