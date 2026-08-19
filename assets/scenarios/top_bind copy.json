@@ -5,7 +5,7 @@
   "logs": [
     {
       "length": 10,
-      "diameter": 0.80,
+      "diameter": 0.60,
       "density": 500,
       "position": [
         0,
@@ -35,6 +35,32 @@
           "dx": 5.0,
           "dz": 10.0,
           "stiffness": 0.4
+        }
+      ]
+    },
+    {
+      "length": 8,
+      "diameter": 0.45,
+      "density": 500,
+      "position": [
+        4,
+        1.8,
+        2
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "supports": [
+        {
+          "type": "mound",
+          "x": -6,
+          "y": 1.0,
+          "z": 0,
+          "dx": 4.0,
+          "dz": 4.0,
+          "stiffness": 0.8
         }
       ]
     }
